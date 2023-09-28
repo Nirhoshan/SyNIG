@@ -65,10 +65,12 @@ Folder hierarchy of the current dataset,
 
 To run the script clone the repository to your local repository and install the required packages above. 
 
-### Run GAN model
+### Run Pre-processing and GAN training
+
+Run `Gasf_conversion.py' for to convert 1D traces to GASF images and run `GAN.py` by setting dataset directory appropriately for data generation.
 
 ### Run post-processing steps
-For YouTube and Netflix run Run `post-processing-CSIRO.py` giving the following arguments appropriately
+For YouTube and Netflix Run `post-processing-CSIRO.py` giving the following arguments appropriately
 * `--platform`                 either YouTube or Netflix
 * `--video`                    class ID. According to the dataset this should be 0 or 1
 * `--no_of_ori_traces`         num of original traces used for the post-processing steps
