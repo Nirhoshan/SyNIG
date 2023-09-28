@@ -1,8 +1,8 @@
 # this entire fucntion is to analyse the pad point distribution of the actual traces.
 # once an actual trace is selected, pad points are selected randomly from a distribution we created.
 
-import pandas as pd
 import argparse
+import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import numpy as np
@@ -225,33 +225,29 @@ def analyse_zero_padding_regions(video, platform, no_ori_traces, ori_path, gan_p
 
 
 if __name__ == '__main__':
-
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--platform',
-                        help='Enter the platforms either: DF')
+                        help='Enter the platforms either: YouTube, Netflix or Stan')
     parser.add_argument('--video',
                         help='Video ID ranging from 0 to 20',
                         type=int)
     parser.add_argument('--no_of_ori_traces',
                         help='Number of original traces for the algorithm',
                         type=int)
-    parser.add_argument('--original_path',
+    parser.add_argument('--data_path',
                         help='Path to the original data folder')
-    parser.add_argument('--gan_out_path',
-                        help ='Path to the GAN output')
-    parser.add_argument('--post_proc_out_path',
-                        help ='Path to the Post processed path')
 
     args = parser.parse_args()
     platform = args.platform
     video = args.video
     no_ori_traces = args.no_of_ori_traces
-    ori_path = args.original_path
-    gan_path = args.gan_out_path
-    post_path = args.post_proc_out_path
+    data_path = args.data_path
 
-    
+    ori_path = data_path + '/' + platform + '/traces_' + str(no_ori_traces) + '/actual/'
+    gan_path = data_path + '/' + platform + '/traces_' + str(no_ori_traces) + '/gan/'
+    post_path = data_path + '/' + platform + '/traces_' + str(no_ori_traces) + '/post/'
+
     analyse_zero_padding_regions(video, platform, no_ori_traces, ori_path, gan_path, post_path)
 
 

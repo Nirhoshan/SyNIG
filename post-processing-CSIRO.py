@@ -2,12 +2,10 @@
 # once an actual trace is selected, pad points are selected randomly from a distribution we created.
 
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 from pyts.image import GramianAngularField
 import numpy as np
 from scipy.signal import find_peaks
-from skimage.exposure import match_histograms
 import argparse
 
 
@@ -285,7 +283,7 @@ def analyse_zero_padding_regions(v, platform, original_traces, act_path, GAN_out
         least_mse_sel_act_trace = rand_traces[act_trace_ind_in_rand_trace]
         act_pad_point = pad_lookup[pad_lookup['trace'] == (least_mse_sel_act_trace + 1)].values[0, 1]
 
-        # reconstruct the synthetic post processed image. 
+        # reconstruct the synthetic post processed image.
         syn_pad_point = reconstruct_all_image(least_mse_synth_profile, act_pad_point, least_mse_act_profile,
                                               v + 1,
                                               s + 1,
@@ -324,35 +322,19 @@ if __name__ == '__main__':
     parser.add_argument('--no_of_ori_traces',
                         help='Number of original traces for the algorithm',
                         type=int)
-    parser.add_argument('--original_path',
+    parser.add_argument('--data_path',
                         help='Path to the original data folder')
-    parser.add_argument('--gan_out_path',
-                        help ='Path to the GAN output')
-    parser.add_argument('--post_proc_out_path',
-                        help ='Path to the Post processed path')
 
     args = parser.parse_args()
     platform = args.platform
     video = args.video
     no_ori_traces = args.no_of_ori_traces
-    ori_path = args.original_path
-    gan_path = args.gan_out_path
-    post_path = args.post_proc_out_path
+    data_path = args.data_path
 
-    original_traces = 80
-
-    # test arguments
-    platform = 'Youtube'
-    video = 0
-    no_ori_traces = 80
-    ori_path ='/Users/ckat9988/Documents/Research/CS_work_new/github_data/'+ platform+'/traces_'+str(original_traces)+'/actual/'
-    gan_path = '/Users/ckat9988/Documents/Research/CS_work_new/github_data/'+ platform+'/traces_'+str(original_traces)+'/gan/'
-    post_path = '/Users/ckat9988/Documents/Research/CS_work_new/github_data/'+ platform+'/traces_'+str(original_traces)+'/post/'
+    ori_path = data_path+'/'+ platform+'/traces_'+str(no_ori_traces)+'/actual/'
+    gan_path = data_path+'/'+ platform+'/traces_'+str(no_ori_traces)+'/gan/'
+    post_path = data_path+'/'+ platform+'/traces_'+str(no_ori_traces)+'/post/'
 
     analyse_zero_padding_regions(video, platform, no_ori_traces, ori_path, gan_path, post_path)
-
-    df = pd.read_csv('/Users/ckat9988/Documents/Research/CS_work_new/github_data/Youtube/traces_80/post/vid1/Youtube_1.csv').values
-    plt.imshow(df)
-    plt.show()
 
 
