@@ -78,9 +78,22 @@ sample implementation
 
 ` python3 post-processing-CSIRO.py --platform 'YouTube'  --video 0 --no_of_ori_traces 80 --data_path <folder path> `
 
+You can use the similar command line for `post-processing-DF.py`
 
+## Please cite our work if you intend to use our dataset or refer to the paper.
 
+*Sivaroopan, N., Madarasingha, C., Muramudalige, S., Jourjon, G., Jayasumana, A. and Thilakarathna, K., 2023, October. SyNIG: Synthetic Network Traffic Generation through Time Series Imaging. In 2023 IEEE 48th Conference on Local Computer Networks (LCN) (pp. 1-9). IEEE.*
 
+`@inproceedings{sivaroopan2023synig,`\
+  `title={SyNIG: Synthetic Network Traffic Generation through Time Series Imaging},`\
+  `author={Sivaroopan, Nirhoshan and Madarasingha, Chamara and Muramudalige, Shashika and Jourjon, Guillaume and Jayasumana, Anura and Thilakarathna, Kanchana},`\
+  `booktitle={2023 IEEE 48th Conference on Local Computer Networks (LCN)},`\
+  `pages={1--9},`\
+  `year={2023},`\
+  `organization={IEEE}`\
+`}`
+
+### email:
 
 
 
