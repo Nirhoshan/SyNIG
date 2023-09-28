@@ -33,5 +33,6 @@ use cases showing improved performance.
 
 Overall process of SyNIG
 
+<img src="overall_process.jpg" width="700">
 
 
