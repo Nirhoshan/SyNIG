@@ -10,7 +10,7 @@ Following packages are required.
 * scipy           1.4.1
 * pyts            0.12.0
 
-## Breif overview of OpCASH
+## Breif overview of SyNIG
 
 Immense growth of network usage and the associated
 proliferation of network, traffic, traffic classes, and diverse
@@ -35,8 +35,38 @@ Overall process of SyNIG
 
 <img src="overall_process.jpg" width="700">
 
+## Data
+We have released the data for the purpose of re-implementing and testing the algoirhtm [here](https://drive.google.com/drive/folders/1qoNrghez1vffgApGe9SnUXSzV9fx6unz?usp=sharing). This dataset is not the complete one. Complete dataset will be available upon the request.
+Folder hierarchy of the current dataset,
+
+--Platform used (e.g., YouTube, Netflix, DF)
+
+---- Number of original traces used in post-processing steps(e.g. Traces_80)
+
+------- Actual/GAN output/Post-processed data
+
+------- Actual: Actual data used for the GAN model training and post-processing steps. All `.csv` files are prefrixed with the `pltform_class-ID_trace-ID`
+
+------- GAN: generated intermediate data from the GAN model
+
+-----------vid-x: represent one class. We have given only 2 classes (`vid` has been used as the naming convention for different classes).
+
+---------------`platform-i.csv`: In each class folder, there are _n_ of synthetic traces from the GAN model.
+
+------- Post: Post processed data. Each synthetic image from the GAN folder is post-processed and stored in this folder.
+
+-----------vid-x: represent one class. We have given only 2 classes (`vid` has been used as the naming convention for different classes).
+
+---------------`platform-i.csv`: In each class folder, there are _n_ of post-processed synthetic traces.
+
+
+
 ## Run the script
+
+
 To run the script clone the repository to your local repository and install the required packages above. 
+
+
 
 
 
