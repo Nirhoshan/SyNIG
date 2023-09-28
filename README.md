@@ -35,4 +35,9 @@ Overall process of SyNIG
 
 <img src="overall_process.jpg" width="700">
 
+## Run the script
+To run the script clone the repository to your local repository and install the required packages above. 
+
+
+
 
