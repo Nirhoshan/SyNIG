@@ -61,10 +61,23 @@ Folder hierarchy of the current dataset,
 
 
 
-## Run the script
-
+## Run scripts
 
 To run the script clone the repository to your local repository and install the required packages above. 
+
+### Run GAN model
+
+### Run post-processing steps
+For YouTube and Netflix run Run `post-processing-CSIRO.py` giving the following arguments appropriately
+* `--platform`                 either YouTube or Netflix
+* `--video`                    class ID. According to the dataset this should be 0 or 1
+* `--no_of_ori_traces`         num of original traces used for the post-processing steps
+* `--data_path`                path to the data
+  
+sample implementation
+
+` python3 post-processing-CSIRO.py --platform 'YouTube'  --video 0 --no_of_ori_traces 80 --data_path <folder path> `
+
 
 
 
