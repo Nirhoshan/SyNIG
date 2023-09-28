@@ -10,7 +10,7 @@ Following packages are required.
 * scipy           1.4.1
 * pyts            0.12.0
 
-## Breif overview of SyNIG
+## Brief overview of SyNIG
 
 Immense growth of network usage and the associated
 proliferation of network, traffic, traffic classes, and diverse
