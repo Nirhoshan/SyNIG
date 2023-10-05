@@ -5,7 +5,7 @@ from pyts.image import GramianAngularField
 
 
 data_dir="Youtube/vid" # directory where 1D traces are stored (Format : Youtube/vid*)
-save_dir="Youtube_csv/vid" # directorty store GASF converted data
+save_dir="Youtube_csv/vid" # directory to store GASF converted data
 
 for i in range(20):
   vid=data_dir+str(i+1)

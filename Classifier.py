@@ -17,7 +17,24 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 platform='Youtube'
 
-
+"""
+    Data structure for this file is
+    - Youtube
+        - actual
+            -vid1
+                -vid1_1.csv
+                -vid1_2.csv
+                -
+            -vid2
+            -
+        - synth
+            -vid1
+                -1.csv
+                -2.csv
+                -
+            -vid2
+            -
+"""
 ## ++++++ prepare indices for the synthesized and actual dataset ++++++
 ## actual data
 def get_paths_actual_data(path_actual, num_of_vid, num_of_act_trace):
